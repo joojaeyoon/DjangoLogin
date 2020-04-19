@@ -1,0 +1,41 @@
+body {
+  background-color: white !important;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  min-width: 350px;
+  width: 25%;
+  max-width: 30%;
+  animation: slidein 1s ease-out;
+}
+
+.django-green {
+  background-color: #4db6ac !important;
+}
+
+.button-outline-django {
+  color: #4db6ac !important;
+  background-color: transparent !important;
+  border: 2px solid #4db6ac !important;
+}
+
+#to-register,
+#to-login {
+  color: #007bff;
+}
+
+#Register {
+  display: none;
+}
+
+@keyframes slidein {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+  }
+}

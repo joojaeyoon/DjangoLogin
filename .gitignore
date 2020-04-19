@@ -1,3 +1,7 @@
 *.pyc
 django/
 .vscode/
+
+staticfiles/
+
+__pycache__/

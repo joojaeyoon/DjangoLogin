@@ -1,0 +1,166 @@
+{% load static %} {% load socialaccount %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}" />
+
+    <link rel="stylesheet" href="{% static 'css/login.css' %}" />
+  </head>
+  <body>
+    <div id="Login" class="card">
+      <h5 class="card-header django-green white-text text-center py-4">
+        <strong>Sign in</strong>
+      </h5>
+
+      <div class="card-body px-lg-5 pt-0">
+        <!-- Form -->
+        <form id="login-form" class="text-center" style="color: #757575;">
+          {% csrf_token %}
+          <!-- Username -->
+          <div class="md-form">
+            <input
+              type="text"
+              id="materialLoginFormUsername"
+              class="form-control"
+            />
+            <label for="materialLoginFormUsername">Username</label>
+          </div>
+          <!-- Password -->
+          <div class="md-form">
+            <input
+              type="password"
+              id="materialLoginFormPassword"
+              class="form-control"
+            />
+            <label for="materialLoginFormPassword">Password</label>
+          </div>
+          <!-- Sign in button -->
+          <button
+            class="btn button-outline-django btn-rounded btn-block my-4 waves-effect z-depth-0"
+            type="submit"
+          >
+            Sign in
+          </button>
+          <!-- Register -->
+          <p>
+            Not a member?
+            <a id="to-register">Register</a>
+          </p>
+        </form>
+        <!-- Form -->
+      </div>
+    </div>
+    <!-- Material form login -->
+
+    <!-- Material form register -->
+    <div id="Register" class="card">
+      <h5 class="card-header django-green white-text text-center py-4">
+        <strong>Sign up</strong>
+      </h5>
+      <!--Card content-->
+      <div class="card-body px-lg-5 pt-0">
+        <!-- Form -->
+        <form
+          id="register-form"
+          class="text-center"
+          style="color: #757575;"
+          action="#!"
+        >
+          {% csrf_token %}
+          <!-- Username -->
+          <div class="md-form mt-3">
+            <input
+              type="text"
+              id="materialRegisterFormUsername"
+              class="form-control"
+            />
+            <label for="materialRegisterFormUsername">Username</label>
+          </div>
+          <!-- Password -->
+          <div class="md-form">
+            <input
+              type="password"
+              id="materialRegisterFormPassword"
+              class="form-control"
+              aria-describedby="materialRegisterFormPasswordHelpBlock"
+            />
+            <label for="materialRegisterFormPassword">Password</label>
+          </div>
+          <div class="md-form">
+            <input
+              type="password"
+              id="materialRegisterFormPasswordCheck"
+              class="form-control"
+              aria-describedby="materialRegisterFormPasswordHelpBlock"
+            />
+            <label for="materialRegisterFormPasswordCheck"
+              >Check Password</label
+            >
+            <small
+              id="materialRegisterFormPasswordHelpBlock"
+              class="form-text text-muted mb-4"
+            >
+              At least 8 characters
+            </small>
+          </div>
+          <!-- Sign up button -->
+          <button
+            class="btn button-outline-django btn-rounded btn-block my-4 waves-effect z-depth-0"
+            type="submit"
+          >
+            Sign up
+          </button>
+          <!-- Register -->
+          <p>
+            Already a member?
+            <a id="to-login">Login</a>
+          </p>
+          <!-- Social login -->
+          <p>or sign in with:</p>
+          <a type="button" class="btn-floating btn-fb btn-sm">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a type="button" class="btn-floating btn-tw btn-sm">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a
+            type="button"
+            class="btn-floating btn-li btn-sm"
+            href="{% provider_login_url 'google' %}"
+          >
+            <i class="fab fa-google"></i>
+          </a>
+          <a type="button" class="btn-floating btn-git btn-sm">
+            <i class="fab fa-github"></i>
+          </a>
+        </form>
+        <!-- Form -->
+      </div>
+    </div>
+    <!-- Material form register -->
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{% static 'js/popper.min.js' %}"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{% static 'js/bootstrap.min.js' %}"
+    ></script>
+    <script type="text/javascript" src="{% static 'js/mdb.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/login.js' %}"></script>
+  </body>
+</html>
