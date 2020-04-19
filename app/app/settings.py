@@ -49,12 +49,8 @@ INSTALLED_APPS = [
     "login",
 
     # providers
-    'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.github',
     'allauth.socialaccount.providers.google',
-    'allauth.socialaccount.providers.kakao',
-    'allauth.socialaccount.providers.naver',
-    'allauth.socialaccount.providers.twitch',
 ]
 
 MIDDLEWARE = [
@@ -166,6 +162,13 @@ SOCIALACCOUNT_PROVIDERS = {
             'access_type': 'online',
         }
     },
+    'github': {
+        'SCOPE': [
+            'user',
+            'repo',
+            'read:org',
+        ],
+    }
 }
 
 LOGIN_REDIRECT_URL = '/success/'
