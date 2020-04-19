@@ -1,0 +1,19 @@
+{% load static %}
+{% load socialaccount %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Success!</title>
+</head>
+  <h2>Login Success!</h2>
+  {% for account in user.socialaccount_set.all %}
+    <p><img width="50" height="50" src="{{ account.get_avatar_url }}"/></p>
+
+    <p>UID: <a href="{{ account.extra_data.link }}">{{ account.uid }}</a></p>
+
+    <p>email: {{ account.extra_data.email }}</p>
+    <p>Name: {{ account.extra_data.name }}</p>
+  {% endfor %}
+</body>
+</html>

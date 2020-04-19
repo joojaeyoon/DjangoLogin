@@ -55,6 +55,23 @@
             Not a member?
             <a id="to-register">Register</a>
           </p>
+          <p>or sign in with:</p>
+          <a type="button" class="btn-floating btn-fb btn-sm">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a type="button" class="btn-floating btn-tw btn-sm">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a
+            type="button"
+            class="btn-floating btn-li btn-sm"
+            href="{% provider_login_url 'google' %}"
+          >
+            <i class="fab fa-google"></i>
+          </a>
+          <a type="button" class="btn-floating btn-git btn-sm">
+            <i class="fab fa-github"></i>
+          </a>
         </form>
         <!-- Form -->
       </div>
@@ -125,7 +142,7 @@
             <a id="to-login">Login</a>
           </p>
           <!-- Social login -->
-          <p>or sign in with:</p>
+          <p>or sign up with:</p>
           <a type="button" class="btn-floating btn-fb btn-sm">
             <i class="fab fa-facebook-f"></i>
           </a>

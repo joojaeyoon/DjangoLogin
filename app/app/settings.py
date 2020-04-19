@@ -39,9 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "django.contrib.sites",
 
-    'rest_framework',
-    'rest_framework.authtoken',
-
     'allauth',
     'allauth.socialaccount',
     'allauth.account',
@@ -83,6 +80,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
+                # `allauth` needs this from django
+                'django.template.context_processors.request',
             ],
         },
     },
@@ -158,13 +158,14 @@ AUTHENTICATION_BACKENDS = (
 
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
-        # For each OAuth based provider, either add a ``SocialApp``
-        # (``socialaccount`` app) containing the required client
-        # credentials, or list them here:
-        'APP': {
-            'client_id': '168310234965-jvcg790qe84n9ka62rod6ji81rdc2k0s.apps.googleusercontent.com',
-            'secret': 'PXReUJUshP_kkx8pimzmkipX',
-            'key': ''
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'online',
         }
-    }
+    },
 }
+
+LOGIN_REDIRECT_URL = '/success/'
