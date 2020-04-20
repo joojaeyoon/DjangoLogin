@@ -5,3 +5,6 @@ django/
 staticfiles/
 
 __pycache__/
+
+
+*.sqlite3

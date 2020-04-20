@@ -4,7 +4,8 @@ Google, Github social login example
 
 ## To Use
 
-1. Get your OAuth App Client ID, Secet Key from [Github Developer](https://github.com/settings/developers), [Google Developer Console](https://console.developers.google.com/)
+1. Get your OAuth App Client ID, Secet Key from [Github Developer](https://github.com/settings/developers), [Google Developer Console](https://console.developers.google.com/).
+
    **Set Authorization callback URL to http://localhost:8000/accounts/github_or_google/login/callback/**
 
 2. Run server
